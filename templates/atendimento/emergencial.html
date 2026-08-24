@@ -1,0 +1,193 @@
+{% extends 'base.html' %}
+ 
+{% block title %}
+Atendimento Emergencial
+{% endblock %}
+ 
+{% block content %}
+ 
+<div class="row justify-content-center">
+ 
+    <div class="col-lg-8">
+ 
+        <div class="card shadow-lg border-0">
+ 
+            <div class="card-header bg-danger text-white py-3">
+ 
+                <h2 class="mb-1">
+                    🚨 Origem Assist
+                </h2>
+ 
+                <small>Sistema Inteligente de Apoio Operacional</small>
+ 
+            </div>
+ 
+            <div class="card-body p-4">
+ 
+                <div class="mb-4">
+ 
+                    <div class="d-flex justify-content-between">
+ 
+                        <strong>Etapa 1 de 4</strong>
+ 
+                        <span class="text-muted">
+                            Dados Iniciais
+                        </span>
+ 
+                    </div>
+ 
+                    <div class="progress mt-2" style="height:10px;">
+ 
+                        <div class="progress-bar bg-danger"
+                             style="width:25%">
+                        </div>
+ 
+                    </div>
+ 
+                </div>
+ 
+                <div class="alert alert-warning">
+ 
+                    <strong>⚠ Atenção</strong><br>
+ 
+                    Confirme todos os dados antes de iniciar o atendimento.
+ 
+                </div>
+ 
+                <form method="get" action="{% url 'tipo_ocorrencia' %}">
+ 
+                    {% csrf_token %}
+ 
+                    <div class="mb-4">
+ 
+                        <label class="form-label fw-bold">
+                            🚦 Tipo de Atendimento
+                        </label>
+ 
+                        <div class="mt-2">
+ 
+                            <div class="form-check form-check-inline">
+ 
+                                <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="tipo_atendimento"
+                                    id="real"
+                                    value="real"
+                                    checked>
+ 
+                                <label class="form-check-label"
+                                       for="real">
+ 
+                                    Atendimento Real
+ 
+                                </label>
+ 
+                            </div>
+ 
+                            <div class="form-check form-check-inline">
+ 
+                                <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="tipo_atendimento"
+                                    id="simulado"
+                                    value="simulado">
+ 
+                                <label class="form-check-label"
+                                       for="simulado">
+ 
+                                    Simulado
+ 
+                                </label>
+ 
+                            </div>
+ 
+                        </div>
+ 
+                    </div>
+ 
+                    <div class="mb-3">
+ 
+                        <label class="form-label fw-bold">
+ 
+                            👤 Nome do Solicitante
+ 
+                        </label>
+ 
+                        {{ form.nome }}
+ 
+                    </div>
+ 
+                    <div class="mb-3">
+ 
+                        <label class="form-label fw-bold">
+ 
+                            📞 Telefone
+ 
+                        </label>
+ 
+                        {{ form.telefone }}
+ 
+                    </div>
+ 
+                    <div class="mb-3">
+ 
+                        <label class="form-label fw-bold">
+ 
+                            📍 Estado
+ 
+                        </label>
+ 
+                        {{ form.estado }}
+ 
+                    </div>
+ 
+                    <div class="mb-3">
+ 
+                        <label class="form-label fw-bold">
+ 
+                            🏠 Endereço
+ 
+                        </label>
+ 
+                        {{ form.endereco }}
+ 
+                    </div>
+ 
+                    <div class="mb-4">
+ 
+                        <label class="form-label fw-bold">
+ 
+                            📌 Ponto de Referência
+ 
+                        </label>
+ 
+                        {{ form.referencia }}
+ 
+                    </div>
+ 
+                    <div class="d-grid">
+ 
+                        <button
+                            type="submit"
+                            class="btn btn-danger btn-lg">
+ 
+                            Próxima Etapa →
+ 
+                        </button>
+ 
+                    </div>
+ 
+                </form>
+ 
+            </div>
+ 
+        </div>
+ 
+    </div>
+ 
+</div>
+ 
+{% endblock %}
+ 

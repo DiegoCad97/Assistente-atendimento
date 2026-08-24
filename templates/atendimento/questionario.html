@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+ 
+{% block title %}
+Questionário
+{% endblock %}
+ 
+{% block content %}
+ 
+<div class="card shadow">
+ 
+    <div class="card-header bg-primary text-white">
+        <h3>Questionário da Ocorrência</h3>
+    </div>
+ 
+    <div class="card-body">
+ 
+        <h4>{{ tipo|title }}</h4>
+ 
+        <hr>
+ 
+        {% for pergunta in perguntas %}
+ 
+            <div class="mb-4">
+ 
+                <h5>{{ pergunta }}</h5>
+ 
+                <button class="btn btn-success">
+                    Sim
+                </button>
+ 
+                <button class="btn btn-danger">
+                    Não
+                </button>
+ 
+            </div>
+ 
+        {% endfor %}
+ 
+    </div>
+ 
+</div>
+ 
+{% endblock %}
